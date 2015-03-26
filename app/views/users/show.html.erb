@@ -3,4 +3,14 @@
 <% @cards.each do |card| %>
 
   <%= link_to card.player.name, user_card_path(@user, card) %>
+
+
+<section class="container">
+  <div id="card">
+    <figure class="front"><%= card.player.name %></figure>
+    <figure class="back">Back Player Stats</figure>
+  </div>
+</section>
+
 <% end %>
+
