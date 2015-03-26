@@ -42,7 +42,7 @@ body {
   perspective: 800px;
 }
 
-#card {
+.player-card {
   width: 100%;
   height: 100%;
   position: absolute;
@@ -50,7 +50,7 @@ body {
   transition: transform 1s;
 }
 
-#card figure {
+.player-card figure {
   display: block;
   position: absolute;
   width: 100%;
@@ -58,13 +58,13 @@ body {
   backface-visibility: hidden;
 }
 
-#card .front {
+.player-card .front {
 
 }
-#card .back {
+.player-card .back {
   transform: rotateY( 180deg );
 }
 
-#card.flipped {
+.player-card.flipped {
   transform: rotateY( 180deg );
 }
