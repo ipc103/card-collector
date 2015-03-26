@@ -1,0 +1,6 @@
+<%= @user.email %>
+
+<% @cards.each do |card| %>
+
+  <%= link_to card.player.name, user_card_path(@user, card) %>
+<% end %>
