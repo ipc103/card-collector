@@ -12,10 +12,9 @@ players = [{"firstname":"David","photo":"https://www.cbssports.com/images/player
 
 
 players.each do |player|
-  binding.pry
   p = Player.new
   p.name = player[:fullname]
-  p.image = player[:photo]
+  p.photo = player[:photo]
   p.save
 end
  

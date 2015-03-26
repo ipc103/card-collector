@@ -7,8 +7,15 @@
 
 <section class="container">
   <div id="card">
-    <figure class="front"><%= card.player.name %></figure>
-    <figure class="back">Back Player Stats</figure>
+    <figure class="front">
+      <%= card.player.name %>
+      <img src="<%=card.player.photo%>">
+      </figure>
+    <figure class="back">Back Player Stats
+    <ul>
+    <li>RBIS</li>
+    <li>HRs</li>
+    </ul></figure>
   </div>
 </section>
 
