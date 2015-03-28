@@ -11,4 +11,4 @@ $.ajax({
 });
 
 
-$.getJSON("http://api.cbssports.com/fantasy/stats?pro_abbrev=mlb&version=3.0&response_format=json&callback=?", function(data){ console.log(data) });
+$.getJSON("http://api.cbssports.com/fantasy/players/list?version=3.0&response_format=json&SPORT=baseball&callback=?", function(data){ console.log(data) });
