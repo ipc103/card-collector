@@ -15,6 +15,7 @@ players.each do |player|
   p = Player.new
   p.name = player[:fullname]
   p.photo = player[:photo]
+  p.cbs_id = player[:id]
   p.save
 end
  

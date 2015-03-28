@@ -4,7 +4,7 @@ class CBS_API_Retriever
   attr_reader :response
 
   def initialize
-    @response ||= get_api_data
+    # @response ||= get_api_data
   end
 
   def get_api_data
@@ -13,5 +13,22 @@ class CBS_API_Retriever
 
   def all_players
     self.response.body
+  end
+
+  def make_card(player_id)
+    url = "http://api.cbssports.com/fantasy/stats?version=3.0&SPORT=baseball&timeframe=2014&response_format=json&period=season&player_id="
+    player = Player.find(player_id)
+    url = url + "#{player.cbs_id}"
+    response = HTTParty.get(url)
+    data = JSON.parse(response)
+    stats = data["body"]["player_stats"]["#{player.cbs_id}"]
+    card = Card.new
+    card.player = player
+    card.year = 2014
+    card.batting_avg = stats["BA"]
+    card.obp = stats["OBP"]
+    card.home_runs = stats["HR"]
+    card.rbis = stats["RBI"]
+    card.save
   end
 end

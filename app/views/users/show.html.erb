@@ -11,10 +11,12 @@
       <%= card.player.name %>
       <img src="<%=card.player.photo%>">
       </figure>
-    <figure class="back">Back Player Stats
+    <figure class="back"><%= "#{card.player.name}"%>
     <ul>
-    <li>RBIS</li>
-    <li>HRs</li>
+    <li><%= "BA: #{card.batting_avg}"%></li>
+    <li><%= "OBP: #{card.obp}"%></li>
+    <li><%= "HRs: #{card.home_runs}"%></li>
+    <li><%= "RBIs: #{card.rbis}"%></li>
     </ul></figure>
   </div>
 </section>

@@ -1,3 +1,6 @@
 player stats URL 
 
 http://api.cbssports.com/fantasy/stats?version=3.0&SPORT=baseball&timeframe=2014&period=season
+
+Andrew McCutchen 
+http://api.cbssports.com/fantasy/stats?version=3.0&SPORT=baseball&timeframe=2014&response_format=json&period=season&player_id=1103290
