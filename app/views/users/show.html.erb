@@ -13,8 +13,8 @@
       </figure>
     <figure class="back"><%= "#{card.player.name}"%>
     <ul>
-    <li><%= "BA: #{card.batting_avg}"%></li>
-    <li><%= "OBP: #{card.obp}"%></li>
+    <li><%= "BA: #{card.batting_avg.round(3)}"%></li>
+    <li><%= "OBP: #{card.obp.round(3)}"%></li>
     <li><%= "HRs: #{card.home_runs}"%></li>
     <li><%= "RBIs: #{card.rbis}"%></li>
     </ul></figure>
