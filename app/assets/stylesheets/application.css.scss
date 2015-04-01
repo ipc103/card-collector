@@ -23,7 +23,13 @@
 body {
   padding-top: 70px;
   padding-bottom: 30px;
+  background: url("stadium.jpg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
+
 
 .theme-dropdown .dropdown-menu {
   position: static;
@@ -31,15 +37,26 @@ body {
   margin-bottom: 20px;
 }
 
+
 .theme-showcase > p > .btn {
   margin: 5px 0;
 }
+
+/* CSS FOR CARDS */
 
 .container { 
   width: 200px;
   height: 260px;
   position: relative;
   perspective: 800px;
+  display: inline-block;
+}
+
+.panel {
+  text-align: center;
+}
+.panel ul {
+  text-align: left;
 }
 
 .player-card {
@@ -59,10 +76,11 @@ body {
 }
 
 .player-card .front {
-
+  background-color: #faebd7;
 }
 .player-card .back {
   transform: rotateY( 180deg );
+  background-color: #faebd7;
 }
 
 .player-card.flipped {

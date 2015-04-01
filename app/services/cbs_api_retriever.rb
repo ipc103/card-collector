@@ -15,9 +15,9 @@ class CBS_API_Retriever
     self.response.body
   end
 
-  def make_card(player_id)
+  def make_card(player_name)
     url = "http://api.cbssports.com/fantasy/stats?version=3.0&SPORT=baseball&timeframe=2014&response_format=json&period=season&player_id="
-    player = Player.find(player_id)
+    player = Player.find_by(name: player_name)
     url = url + "#{player.cbs_id}"
     response = HTTParty.get(url)
     data = JSON.parse(response)
