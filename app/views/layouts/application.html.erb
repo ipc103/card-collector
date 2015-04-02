@@ -8,6 +8,17 @@
   <%= analytics_init if Rails.env.production? %>
 </head>
 <body>
+
+<nav class="navbar navbar-custom navbar-fixed-top">
+  <div class="container">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">Card Collector</a>
+    <div class="navbar-right">
+      <ul class="nav navbar-nav"><li><a class="navbar-brand" href="#"><%= @user.email %></a></li></ul>
+    </div>
+    </div>
+  </div>
+</nav>
 <%= yield %>
 
 </body>
