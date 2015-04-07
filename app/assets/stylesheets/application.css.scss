@@ -32,6 +32,12 @@ body {
   background-size: cover;
 }
 
+#gallery-background {
+  position: absolute;
+  margin: 0px 0px 0px 0px;
+  
+}
+
 
 .theme-dropdown .dropdown-menu {
   position: static;
@@ -79,7 +85,6 @@ body {
 
 .player-card .front {
   background-color: #faebd7;
-  // opacity: .5;
 }
 .player-card .back {
   transform: rotateY( 180deg );

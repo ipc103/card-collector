@@ -10,9 +10,10 @@
       </figure>
     <figure class="back panel">
       <h5><%= "#{card.player.name}"%></h5>
+      <h6><%= card.year %></h6>
       <ul>
-        <li><%= "BA: #{card.batting_avg.round(3)}"%></li>
-        <li><%= "OBP: #{card.obp.round(3)}"%></li>
+        <li><%= "BA: #{sprintf "%.3f", card.batting_avg.round(3)}"%></li>
+        <li><%= "OBP: #{sprintf "%.3f", card.obp.round(3)}"%></li>
         <li><%= "HRs: #{card.home_runs}"%></li>
         <li><%= "RBIs: #{card.rbis}"%></li>
       </ul>

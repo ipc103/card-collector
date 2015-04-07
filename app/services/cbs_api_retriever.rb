@@ -9,20 +9,18 @@ class CBS_API_Retriever
     self.response.body
   end
 
+  def save_card(player, year, avg, obp, hr, rbi)
+    Card.create(player: player, year: year, batting_avg: avg, obp: obp, home_runs: hr, rbis: rbi)
+  end
+
+  def get_player_stats(api_id)
+    url = "http://api.cbssports.com/fantasy/stats?version=3.0&SPORT=baseball&timeframe=2014&response_format=json&period=season&player_id=#{player.cbs_id}"
+    JSON.parse(HTTParty.get(url))
+  end
+
   def make_card(player_name)
-    url = "http://api.cbssports.com/fantasy/stats?version=3.0&SPORT=baseball&timeframe=2014&response_format=json&period=season&player_id="
     player = Player.find_by(name: player_name)
-    url = url + "#{player.cbs_id}"
-    response = HTTParty.get(url)
-    data = JSON.parse(response)
-    stats = data["body"]["player_stats"]["#{player.cbs_id}"]
-    card = Card.new
-    card.player = player
-    card.year = 2014
-    card.batting_avg = stats["BA"]
-    card.obp = stats["OBP"]
-    card.home_runs = stats["HR"]
-    card.rbis = stats["RBI"]
-    card.save
+    stats = get_player_stats(player.cbs_id)["body"]["player_stats"]["#{player.cbs_id}"]
+    save_card(player, 2014, stats["BA"], stats["OBP"], stats["HR"], stats["RBI"])
   end
 end
