@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
-  root "welcome#index"
+  get '/', to: redirect('/users/1')
+  get '/about' => 'users#index'
   resources :users do
     resources :cards
   end

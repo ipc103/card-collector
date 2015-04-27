@@ -1,8 +1,14 @@
+require 'open-uri'
 class CBS_API_Retriever
   URL = "http://api.cbssports.com/fantasy/players/list?version=3.0&response_format=json&SPORT=baseball&callback=?"
 
   def get_api_data
-    HTTParty.get(URL)
+    open(URL).read
+  end
+
+  def parse_players
+    null = nil
+    JSON.parse(get_api_data)
   end
 
   def all_players
