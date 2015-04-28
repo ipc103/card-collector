@@ -27,9 +27,11 @@
                     <li>
                         <a href="/about">About</a>
                     </li>
-                    <li>
-                        <a class="page-scroll" href='<%= "http://www.twitter.com/#{@user.email}" %>'><%= @user.email if @user %></a>
-                    </li>
+                    <% if @user %>
+                        <li>
+                            <a class="page-scroll" href='<%= "http://www.twitter.com/#{@user.email}" %>'><%= @user.email %></a>
+                        </li>
+                    <% end %>
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
