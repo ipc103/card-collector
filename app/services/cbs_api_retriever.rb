@@ -8,7 +8,6 @@ class CBS_API_Retriever
 
   def parse_players
     data = get_api_data.to_json[3..-4]
-    binding.pry
     JSON.parse(data, :quirks_mode => true)
   end
 
@@ -28,6 +27,9 @@ class CBS_API_Retriever
   def make_card(player_name)
     player = Player.find_by(name: player_name)
     stats = get_player_stats(player.cbs_id)["body"]["player_stats"]["#{player.cbs_id}"]
+    user = User.first
+    card.user = user
+    user.save
     save_card(player, 2014, stats["BA"], stats["OBP"], stats["HR"], stats["RBI"])
   end
 end
