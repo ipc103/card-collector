@@ -20,7 +20,7 @@ class CBS_API_Retriever
   end
 
   def get_player_stats(api_id)
-    url = "http://api.cbssports.com/fantasy/stats?version=3.0&SPORT=baseball&timeframe=2014&response_format=json&period=season&player_id=#{player.cbs_id}"
+    url = "http://api.cbssports.com/fantasy/stats?version=3.0&SPORT=baseball&timeframe=2014&response_format=json&period=season&player_id=#{api_id}"
     JSON.parse(HTTParty.get(url))
   end
 
