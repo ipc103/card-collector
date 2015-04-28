@@ -7,8 +7,9 @@ class CBS_API_Retriever
   end
 
   def parse_players
-    null = nil
-    JSON.parse(get_api_data)
+    data = get_api_data.to_json[3..-4]
+    binding.pry
+    JSON.parse(data, :quirks_mode => true)
   end
 
   def all_players
