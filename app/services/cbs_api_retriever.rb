@@ -24,8 +24,7 @@ class CBS_API_Retriever
     JSON.parse(HTTParty.get(url))
   end
 
-  def make_card(player_name)
-    player = Player.find_by(name: player_name)
+  def make_card(player)
     stats = get_player_stats(player.cbs_id)["body"]["player_stats"]["#{player.cbs_id}"]
     user = User.first
     card.user = user

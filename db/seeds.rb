@@ -20,7 +20,7 @@ players.each do |player|
 end
 
 Player.all.each do |player|
-  api.make_card(player.name)
+  api.make_card(player)
 end
  
 
