@@ -3,7 +3,7 @@ class CreateCards < ActiveRecord::Migration
     create_table :cards do |t|
       t.integer :player_id
       t.integer :user_id
-      t.date :year
+      t.integer :year
       t.string :team
       t.float :batting_avg
       t.float :obp
