@@ -27,8 +27,7 @@ class CBS_API_Retriever
   def make_card(player)
     stats = get_player_stats(player.cbs_id)["body"]["player_stats"]["#{player.cbs_id}"]
     user = User.first
-    card.user = user
+    save_card(player, 2014, stats["BA"], stats["OBP"], stats["HR"], stats["RBI"], user_id: user.id)
     user.save
-    save_card(player, 2014, stats["BA"], stats["OBP"], stats["HR"], stats["RBI"])
   end
 end
